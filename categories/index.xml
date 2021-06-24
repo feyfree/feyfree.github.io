@@ -9,19 +9,20 @@
     <language>en-us</language>
     <atom:link href="https://feyfree.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>第一篇</title>
+      <title>前言</title>
       <link>https://feyfree.github.io/posts/init/</link>
       <pubDate>Tue, 22 Jun 2021 23:38:44 +0800</pubDate>
       <guid>https://feyfree.github.io/posts/init/</guid>
-      <description>&lt;h2 id=&#34;为什么创建这个博客&#34;&gt;为什么创建这个博客&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;博客的来由&#34;&gt;博客的来由&lt;/h2&gt;
 &lt;p&gt;心里一直有自己建立一个个人写作的一个博客。 开始学Python的时候， 后台学了Flask 和 Django 这两个web框架，
 对照着Facebook的BootStrap， 前后来回折腾了不少个博客的残次品。 后来就逐渐放弃了。&lt;/p&gt;
 &lt;p&gt;后来个人的开发语言迁移到了Java上面，又在想能不能用SpringBoot和Vue整合一个博客出来， 动手又吭哧吭哧花了不少时间，
 折腾了点残次品出来。&lt;/p&gt;
-&lt;p&gt;后来自己尝试自己使用公众号去写文章， 但是毕竟微信平台， 约束多。 另外就是一点， 个人写公众号基本就是冲着钱去的，看过和
-关注过不少人的公众号， 最后都慢慢取关了， 产出高的， 基本都是广告，为了赚钱。&lt;/p&gt;
+&lt;p&gt;后来自己尝试自己使用公众号去写文章， 但是毕竟微信平台， 约束多。&lt;/p&gt;
 &lt;p&gt;最后选择Github Pages， 简单，能像写代码那样写文章， 省去了不少自己搭建博客的各类成本。很方便。
-采用的是Hugo + hugo-flex， 我觉得能满足我的需求。 并且简单。对着教程， 基本就能很快搭建好这样一个静态的博客网站&lt;/p&gt;
+采用的是Hugo + hugo-flex， 我觉得能满足我的需求。 并且简单。根据教程， 基本就能很快搭建好这样一个静态的博客网站。&lt;/p&gt;
+&lt;p&gt;博客会记录一些自己的刷题过程， 在团队的公开分享， 日常的开发踩坑， 以及读书感悟。&lt;/p&gt;
+&lt;p&gt;期待下面的自己写文字的时光！&lt;/p&gt;
 </description>
     </item>
   </channel>
