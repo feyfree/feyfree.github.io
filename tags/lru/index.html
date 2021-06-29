@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Categories | Feyfree Hugo Site</title>
+<title>LRU | Feyfree Hugo Site</title>
 <meta name="keywords" content="" />
 <meta name="description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod">
 <meta name="author" content="Theme PaperMod">
-<link rel="canonical" href="https://feyfree.github.io/categories/" />
+<link rel="canonical" href="https://feyfree.github.io/tags/lru/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.35cd0f65a15cafa92372b8313deef5960aae04b90ad722f2bbf509eb0468137e.css" integrity="sha256-Nc0PZaFcr6kjcrgxPe71lgquBLkK1yLyu/UJ6wRoE34=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://feyfree.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://feyfree.github.io/favicon-16x16.png">
@@ -19,16 +19,16 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.83.1" />
-<link rel="alternate" type="application/rss+xml" href="https://feyfree.github.io/categories/index.xml">
-<meta property="og:title" content="Categories" />
+<link rel="alternate" type="application/rss+xml" href="https://feyfree.github.io/tags/lru/index.xml">
+<meta property="og:title" content="LRU" />
 <meta property="og:description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://feyfree.github.io/categories/" /><meta property="og:image" content="https://feyfree.github.io/papermod-cover.png"/>
+<meta property="og:url" content="https://feyfree.github.io/tags/lru/" /><meta property="og:image" content="https://feyfree.github.io/papermod-cover.png"/>
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://feyfree.github.io/papermod-cover.png"/>
 
-<meta name="twitter:title" content="Categories"/>
+<meta name="twitter:title" content="LRU"/>
 <meta name="twitter:description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"/>
 
 </head>
@@ -117,7 +117,7 @@
             </li>
             <li>
                 <a href="https://feyfree.github.io/categories/" title="Categories">
-                    <span class="active">Categories</span>
+                    <span>Categories</span>
                 </a>
             </li>
             <li>
@@ -133,16 +133,26 @@
         </ul>
     </nav>
 </header>
-<main class="main">
-<header class="page-header">
-    <h1>Categories</h1>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://feyfree.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://feyfree.github.io/tags/">Tags</a></div>
+  <h1>LRU</h1>
 </header>
 
-<ul class="terms-tags">
-    <li>
-        <a href="https://feyfree.github.io/categories/leetcode/">LeetCode <sup><strong><sup>2</sup></strong></sup> </a>
-    </li>
-</ul>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>LRU代码实现</h2>
+  </header>
+  <section class="entry-content">
+    <p>LRU 全称叫做 （Least Recently Used）。 这个算法理念被操作系统， 缓存设计中广泛地使用。
+动手实现一个简易的LRU也是面试的经典题目
+LeetCode 上面有一道题目就是让我们实现LRU
+146. LRU 缓存机制
+实现代码
+public class LRUCache { static class Node { int key; int value; Node prev; Node next; public Node() { } public Node(int key, int value) { this.key = key; this.value = value; } } private Map&lt;Integer, Node&gt; cache = new HashMap&lt;&gt;(); private int size; private int capacity; private Node head, tail; public LRUCache(int capacity) { this.size = 0; this....</p>
+  </section>
+  <footer class="entry-footer">June 29, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to LRU代码实现" href="https://feyfree.github.io/posts/lru%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/"></a>
+</article>
     </main>
     <footer class="footer">
     <span>&copy; 2021 <a href="https://feyfree.github.io/">Feyfree Hugo Site</a></span>

@@ -10,7 +10,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jun 2021 22:06:15 +0800</lastBuildDate><atom:link href="https://feyfree.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Jun 2021 18:07:19 +0800</lastBuildDate><atom:link href="https://feyfree.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LRU</title>
+      <link>https://feyfree.github.io/tags/lru/</link>
+      <pubDate>Tue, 29 Jun 2021 18:07:19 +0800</pubDate>
+      
+      <guid>https://feyfree.github.io/tags/lru/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>DP</title>
       <link>https://feyfree.github.io/tags/dp/</link>

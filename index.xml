@@ -10,7 +10,7 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Jun 2021 21:11:53 +0800</lastBuildDate><atom:link href="https://feyfree.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Jun 2021 18:07:19 +0800</lastBuildDate><atom:link href="https://feyfree.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于</title>
       <link>https://feyfree.github.io/about/</link>
@@ -21,6 +21,20 @@
 从业背景 17年从某知名男子职业技术学院以学渣身份毕业， 学的是电气工程。第一年自告奋勇（经济拮据）去了非洲外派当了半年的劳务输出， 主要是打理在当地的项目政府沟通等等。 半年后，觉得不喜欢， 18年年后辞职回家了。此后经历了一段长达7个月的空档期， 那个时候不知道自己能干嘛， 自己想干嘛， 精神状态和身体状态都很差。18年10月份左右， 决定自学编程，找个班上上。 18年12月份找到了一家小公司开始程序源生涯， 19年6月来到杭州， 也就是现在的公司。
 现在做的 自己还是比较懒， 这个github page 也是准备找工作的时候搭建的。从18年到现在，一直处于补坑的状态。 操作系统， 网络， 算法， 编译原理， 分布式系统， 数据库理论。。。 现在自己认为略知一二， 起码自己还能在公司分享一些关于上述领域的一些入门知识。
 个人特点 。。</description>
+    </item>
+    
+    <item>
+      <title>LRU代码实现</title>
+      <link>https://feyfree.github.io/posts/lru%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Tue, 29 Jun 2021 18:07:19 +0800</pubDate>
+      
+      <guid>https://feyfree.github.io/posts/lru%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/</guid>
+      <description>LRU 全称叫做 （Least Recently Used）。 这个算法理念被操作系统， 缓存设计中广泛地使用。
+动手实现一个简易的LRU也是面试的经典题目
+LeetCode 上面有一道题目就是让我们实现LRU
+146. LRU 缓存机制
+实现代码
+public class LRUCache { static class Node { int key; int value; Node prev; Node next; public Node() { } public Node(int key, int value) { this.key = key; this.value = value; } } private Map&amp;lt;Integer, Node&amp;gt; cache = new HashMap&amp;lt;&amp;gt;(); private int size; private int capacity; private Node head, tail; public LRUCache(int capacity) { this.size = 0; this.</description>
     </item>
     
     <item>

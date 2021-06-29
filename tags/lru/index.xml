@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>LRU on Feyfree Hugo Site</title>
+    <link>https://feyfree.github.io/tags/lru/</link>
+    <description>Recent content in LRU on Feyfree Hugo Site</description>
+    <image>
+      <url>https://feyfree.github.io/papermod-cover.png</url>
+      <link>https://feyfree.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Jun 2021 18:07:19 +0800</lastBuildDate><atom:link href="https://feyfree.github.io/tags/lru/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LRU代码实现</title>
+      <link>https://feyfree.github.io/posts/lru%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Tue, 29 Jun 2021 18:07:19 +0800</pubDate>
+      
+      <guid>https://feyfree.github.io/posts/lru%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/</guid>
+      <description>LRU 全称叫做 （Least Recently Used）。 这个算法理念被操作系统， 缓存设计中广泛地使用。
+动手实现一个简易的LRU也是面试的经典题目
+LeetCode 上面有一道题目就是让我们实现LRU
+146. LRU 缓存机制
+实现代码
+public class LRUCache { static class Node { int key; int value; Node prev; Node next; public Node() { } public Node(int key, int value) { this.key = key; this.value = value; } } private Map&amp;lt;Integer, Node&amp;gt; cache = new HashMap&amp;lt;&amp;gt;(); private int size; private int capacity; private Node head, tail; public LRUCache(int capacity) { this.size = 0; this.</description>
+    </item>
+    
+  </channel>
+</rss>
