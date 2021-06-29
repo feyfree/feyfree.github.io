@@ -13,7 +13,7 @@
 为什么需要分布式系统 这个是在听MIT6.824 这门课， Morris 老师画的一个简图。 为了追求High-Performance， 所以会采用Sharding的做法， 为了最大程度的提升系统的稳定， 所以会采用容错的机制， 容错的机制意味着数据的复制， 而复制则会产生不一致性， 不一致性就要增加通信， 而增加通信 又会造成 Low-Performance 。
 这个是分布式系统整体结构的一个演示。在各个阶段， 都有很多出色的设计来实现对应的愿景。 在分布式系统中有一个非常著名的理论叫做CAP 理论， 实际上我们也可以看到 实际的High-Performance 也是需要好多妥协的， 不同场景对High-Performance 的要求也是有区别的。
 分布式系统的关键词  网络 操作系统 文件存储系统 全局时钟 分布式协议 分布式事务  ">
-<meta name="author" content="">
+<meta name="author" content="Theme PaperMod">
 <link rel="canonical" href="https://feyfree.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9D%82%E8%B0%88/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.35cd0f65a15cafa92372b8313deef5960aae04b90ad722f2bbf509eb0468137e.css" integrity="sha256-Nc0PZaFcr6kjcrgxPe71lgquBLkK1yLyu/UJ6wRoE34=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
@@ -34,11 +34,13 @@
 这个是分布式系统整体结构的一个演示。在各个阶段， 都有很多出色的设计来实现对应的愿景。 在分布式系统中有一个非常著名的理论叫做CAP 理论， 实际上我们也可以看到 实际的High-Performance 也是需要好多妥协的， 不同场景对High-Performance 的要求也是有区别的。
 分布式系统的关键词  网络 操作系统 文件存储系统 全局时钟 分布式协议 分布式事务  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://feyfree.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9D%82%E8%B0%88/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://feyfree.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9D%82%E8%B0%88/" /><meta property="og:image" content="https://feyfree.github.io/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-06-28T21:11:53&#43;08:00" />
 <meta property="article:modified_time" content="2021-06-28T21:11:53&#43;08:00" />
 
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://feyfree.github.io/papermod-cover.png"/>
+
 <meta name="twitter:title" content="分布式操作系统杂谈"/>
 <meta name="twitter:description" content="前言 前不久刚刚看完《分布式系统概念与设计》这本书， 对于此前做开发的时候积累的一些分布式的相关的知识而言， 这本书是一个很好的总结。 下面我结合自己的一些积累还有这本书的相关知识点， 对自己理解的分布式这个概念做一个简单的分享！
 分布式系统的特征  分布式系统是其组件分布在联网的计算机上， 组件之间通过传递消息进行通信和动作协调的系统。 该定义引出了分布式系统的下列重要特征： 组件的并发性， 缺乏全局时钟， 组件故障的独立性。
@@ -83,6 +85,10 @@
   "inLanguage": "en",
   "datePublished": "2021-06-28T21:11:53+08:00",
   "dateModified": "2021-06-28T21:11:53+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Theme PaperMod"
+  },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://feyfree.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9D%82%E8%B0%88/"
@@ -177,18 +183,18 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://feyfree.github.io/posts/" title="文档">
-                    <span>文档</span>
+                <a href="https://feyfree.github.io/posts" title="Posts">
+                    <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://feyfree.github.io/categories/" title="分类">
-                    <span>分类</span>
+                <a href="https://feyfree.github.io/categories/" title="Categories">
+                    <span>Categories</span>
                 </a>
             </li>
             <li>
-                <a href="https://feyfree.github.io/tags/" title="标签">
-                    <span>标签</span>
+                <a href="https://feyfree.github.io/tags/" title="Tags">
+                    <span>Tags</span>
                 </a>
             </li>
             <li>
@@ -203,13 +209,35 @@
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="https://feyfree.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://feyfree.github.io/posts/">Posts</a></div>
     <h1 class="post-title">
       分布式操作系统杂谈
     </h1>
-    <div class="post-meta">June 28, 2021
+    <div class="post-meta">June 28, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">Table of Contents</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%89%8d%e8%a8%80" aria-label="前言">前言</a><ul>
+                        
+                <li>
+                    <a href="#%e5%88%86%e5%b8%83%e5%bc%8f%e7%b3%bb%e7%bb%9f%e7%9a%84%e7%89%b9%e5%be%81" aria-label="分布式系统的特征">分布式系统的特征</a></li>
+                <li>
+                    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e5%88%86%e5%b8%83%e5%bc%8f%e7%b3%bb%e7%bb%9f" aria-label="为什么需要分布式系统">为什么需要分布式系统</a></li>
+                <li>
+                    <a href="#%e5%88%86%e5%b8%83%e5%bc%8f%e7%b3%bb%e7%bb%9f%e7%9a%84%e5%85%b3%e9%94%ae%e8%af%8d" aria-label="分布式系统的关键词">分布式系统的关键词</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h2 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h2>
 <p>前不久刚刚看完《分布式系统概念与设计》这本书， 对于此前做开发的时候积累的一些分布式的相关的知识而言， 这本书是一个很好的总结。 下面我结合自己的一些积累还有这本书的相关知识点， 对自己理解的分布式这个概念做一个简单的分享！</p>
 <h3 id="分布式系统的特征">分布式系统的特征<a hidden class="anchor" aria-hidden="true" href="#分布式系统的特征">#</a></h3>
@@ -237,6 +265,14 @@
 
   </div>
   <footer class="post-footer">
+<nav class="paginav">
+  <a class="next" href="https://feyfree.github.io/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8%E5%8F%8A%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>动态规划入门及代码示例</span>
+  </a>
+</nav>
+
   </footer>
 </article>
     </main>
@@ -307,6 +343,53 @@
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

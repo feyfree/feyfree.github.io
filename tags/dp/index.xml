@@ -4,6 +4,10 @@
     <title>DP on Feyfree Hugo Site</title>
     <link>https://feyfree.github.io/tags/dp/</link>
     <description>Recent content in DP on Feyfree Hugo Site</description>
+    <image>
+      <url>https://feyfree.github.io/papermod-cover.png</url>
+      <link>https://feyfree.github.io/papermod-cover.png</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Jun 2021 22:06:15 +0800</lastBuildDate><atom:link href="https://feyfree.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
