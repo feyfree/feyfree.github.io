@@ -1,100 +1,223 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en" dir="auto">
 
-<head>
-  <meta charset="utf-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-  
-    <meta name="description" content="true">
-  
-
-
-
-
-
-
-
-
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>动态规划入门及代码示例 | Feyfree Hugo Site</title>
+<meta name="keywords" content="DP" />
+<meta name="description" content="动态规划入门 目录  什么是动态规划 如何用动态规划解决问题 对于动态规划和其他算法的一些比较  什么是动态规划   概括
+（Dynamic Programming）求解一类最优 化问题， 将原问题划分成为子问题， 子问 题有非常完整的结构。
+  DP术语
+ 状态，状态转移方程 子问题图: 以状态为点， 以状态之间的转 移为边，子问题图是一个DAG    DP的顺序
+ 递推（bottom-up method） 记忆化搜索（top-down with memorization）    问题的内涵
+ 最值 方案， 方案数    动态规划的分类  线性DP 区间DP 背包DP 环形DP 树形DP 状压DP  例题展示 线性DP  53题	https://leetcode-cn.com/problems/maximum-subarray/  /** * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。 * &lt;p&gt; * 输入: [-2,1,-3,4,-1,2,1,-5,4] * 输出: 6 * 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。 * &lt;p&gt; * 思路: 线性扫描算法 * &lt;p&gt; * 前i个元素中, 最大子数组要么在前 i - 1 中 ---&gt; 存储在maxSoFar * 要么其结束位置在 i ---&gt; 存储在maxEndingHere * * @author leilei */ public class Solution { public int maxSubArray(int[] nums) { boolean belowZero = true; int m = Integer.">
+<meta name="author" content="">
+<link rel="canonical" href="https://feyfree.github.io/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8%E5%8F%8A%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.35cd0f65a15cafa92372b8313deef5960aae04b90ad722f2bbf509eb0468137e.css" integrity="sha256-Nc0PZaFcr6kjcrgxPe71lgquBLkK1yLyu/UJ6wRoE34=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://feyfree.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://feyfree.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://feyfree.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://feyfree.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://feyfree.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.83.1" />
-  <title>动态规划入门及代码示例 | Feyfree Hugo Site</title>
-  <link rel="canonical" href="/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8%E5%8F%8A%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/">
+<meta property="og:title" content="动态规划入门及代码示例" />
+<meta property="og:description" content="动态规划入门 目录  什么是动态规划 如何用动态规划解决问题 对于动态规划和其他算法的一些比较  什么是动态规划   概括
+（Dynamic Programming）求解一类最优 化问题， 将原问题划分成为子问题， 子问 题有非常完整的结构。
+  DP术语
+ 状态，状态转移方程 子问题图: 以状态为点， 以状态之间的转 移为边，子问题图是一个DAG    DP的顺序
+ 递推（bottom-up method） 记忆化搜索（top-down with memorization）    问题的内涵
+ 最值 方案， 方案数    动态规划的分类  线性DP 区间DP 背包DP 环形DP 树形DP 状压DP  例题展示 线性DP  53题	https://leetcode-cn.com/problems/maximum-subarray/  /** * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。 * &lt;p&gt; * 输入: [-2,1,-3,4,-1,2,1,-5,4] * 输出: 6 * 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。 * &lt;p&gt; * 思路: 线性扫描算法 * &lt;p&gt; * 前i个元素中, 最大子数组要么在前 i - 1 中 ---&gt; 存储在maxSoFar * 要么其结束位置在 i ---&gt; 存储在maxEndingHere * * @author leilei */ public class Solution { public int maxSubArray(int[] nums) { boolean belowZero = true; int m = Integer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://feyfree.github.io/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8%E5%8F%8A%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-24T22:06:15&#43;08:00" />
+<meta property="article:modified_time" content="2021-06-24T22:06:15&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="动态规划入门及代码示例"/>
+<meta name="twitter:description" content="动态规划入门 目录  什么是动态规划 如何用动态规划解决问题 对于动态规划和其他算法的一些比较  什么是动态规划   概括
+（Dynamic Programming）求解一类最优 化问题， 将原问题划分成为子问题， 子问 题有非常完整的结构。
+  DP术语
+ 状态，状态转移方程 子问题图: 以状态为点， 以状态之间的转 移为边，子问题图是一个DAG    DP的顺序
+ 递推（bottom-up method） 记忆化搜索（top-down with memorization）    问题的内涵
+ 最值 方案， 方案数    动态规划的分类  线性DP 区间DP 背包DP 环形DP 树形DP 状压DP  例题展示 线性DP  53题	https://leetcode-cn.com/problems/maximum-subarray/  /** * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。 * &lt;p&gt; * 输入: [-2,1,-3,4,-1,2,1,-5,4] * 输出: 6 * 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。 * &lt;p&gt; * 思路: 线性扫描算法 * &lt;p&gt; * 前i个元素中, 最大子数组要么在前 i - 1 中 ---&gt; 存储在maxSoFar * 要么其结束位置在 i ---&gt; 存储在maxEndingHere * * @author leilei */ public class Solution { public int maxSubArray(int[] nums) { boolean belowZero = true; int m = Integer."/>
 
 
-  
-
-
-
-
-
-
-
-
-  
-    
-  
-  
-  <link rel="stylesheet" href="/css/base.min.23cd48cee155498cf8a6f89152dd9fda2bd56047a4845068f7927636fd0c454f.css" integrity="sha256-I81IzuFVSYz4pviRUt2f2ivVYEekhFBo95J2Nv0MRU8=" crossorigin="anonymous">
-
-
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://feyfree.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "动态规划入门及代码示例",
+      "item": "https://feyfree.github.io/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8%E5%8F%8A%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "动态规划入门及代码示例",
+  "name": "动态规划入门及代码示例",
+  "description": "动态规划入门 目录  什么是动态规划 如何用动态规划解决问题 对于动态规划和其他算法的一些比较  什么是动态规划   概括\n（Dynamic Programming）求解一类最优 化问题， 将原问题划分成为子问题， 子问 题有非常完整的结构。\n  DP术语\n 状态，状态转移方程 子问题图: 以状态为点， 以状态之间的转 移为边，子问题图是一个DAG    DP的顺序\n 递推（bottom-up method） 记忆化搜索（top-down with memorization）    问题的内涵\n 最值 方案， 方案数    动态规划的分类  线性DP 区间DP 背包DP 环形DP 树形DP 状压DP  例题展示 线性DP  53题\thttps://leetcode-cn.com/problems/maximum-subarray/  /** * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。 * \u0026lt;p\u0026gt; * 输入: [-2,1,-3,4,-1,2,1,-5,4] * 输出: 6 * 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。 * \u0026lt;p\u0026gt; * 思路: 线性扫描算法 * \u0026lt;p\u0026gt; * 前i个元素中, 最大子数组要么在前 i - 1 中 ---\u0026gt; 存储在maxSoFar * 要么其结束位置在 i ---\u0026gt; 存储在maxEndingHere * * @author leilei */ public class Solution { public int maxSubArray(int[] nums) { boolean belowZero = true; int m = Integer.",
+  "keywords": [
+    "DP"
+  ],
+  "articleBody": "动态规划入门 目录  什么是动态规划 如何用动态规划解决问题 对于动态规划和其他算法的一些比较  什么是动态规划   概括\n（Dynamic Programming）求解一类最优 化问题， 将原问题划分成为子问题， 子问 题有非常完整的结构。\n  DP术语\n 状态，状态转移方程 子问题图: 以状态为点， 以状态之间的转 移为边，子问题图是一个DAG    DP的顺序\n 递推（bottom-up method） 记忆化搜索（top-down with memorization）    问题的内涵\n 最值 方案， 方案数    动态规划的分类  线性DP 区间DP 背包DP 环形DP 树形DP 状压DP  例题展示 线性DP  53题\thttps://leetcode-cn.com/problems/maximum-subarray/  /** * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。 *  * 输入: [-2,1,-3,4,-1,2,1,-5,4] * 输出: 6 * 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。 *  * 思路: 线性扫描算法 *  * 前i个元素中, 最大子数组要么在前 i - 1 中 --- 存储在maxSoFar * 要么其结束位置在 i --- 存储在maxEndingHere * * @author leilei */ public class Solution { public int maxSubArray(int[] nums) { boolean belowZero = true; int m = Integer.MIN_VALUE; for (int num : nums) { if (num = 0) { belowZero = false; break; } m = Math.max(m, num); } if (belowZero) { return m; } int maxSoFar = 0; int maxEndingHere = 0; for (int num : nums) { maxEndingHere = Math.max(maxEndingHere + num, 0); maxSoFar = Math.max(maxSoFar, maxEndingHere); } return maxSoFar; } }  300题 https://leetcode-cn.com/problems/longest-increasing-subsequence/  /** * p300 最长上升子序列(不需要连续) * * @author feyfree */ public class Solution { public int lengthOfLIS(int[] nums) { if (nums == null || nums.length == 0) { return 0; } int n = nums.length; int[] dp = new int[n]; // 初始化dp 实际上都是 1  Arrays.fill(dp, 1); for (int i = 1; i  n; i++) { for (int j = 0; j  i; j++) { if (nums[i]  nums[j]) { dp[i] = Math.max(dp[i], dp[j] + 1); } } } int result = 0; for (int i = 0; i  n; i++) { result = Math.max(result, dp[i]); } return result; } }  1143题 https://leetcode-cn.com/problems/longest-common-subsequence/  /** * 最长公共子序列 *  * 给定两个字符串 text1 和text2，返回这两个字符串的最长公共子序列的长度。 *  * 一个字符串的子序列是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。 * 例如，\"ace\" 是 \"abcde\" 的子序列，但 \"aec\" 不是 \"abcde\" 的子序列。两个字符串的「公共子序列」是这两个字符串所共同拥有的子序列。 *  * 若这两个字符串没有公共子序列，则返回 0。 * 1 * 1 * 输入的字符串只含有小写英文字符。 * ------------------------------------------ * 来源：力扣（LeetCode） * 链接：https://leetcode-cn.com/problems/longest-common-subsequence * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 * * @author leilei */ public class Solution { public int longestCommonSubsequence(String text1, String text2) { int l1 = text1.length(); int l2 = text2.length(); // dp[i][j] 实际上是值 text1[i - 1] 和 text2[j -1] 的数值  int[][] dp = new int[l1 + 1][l2 + 1]; for (int i = 0; i  l1; i++) { for (int j = 0; j  l2; j++) { if (text1.charAt(i) == text2.charAt(j)) { dp[i + 1][j + 1] = dp[i][j] + 1; } else { dp[i + 1][j + 1] = Math.max(dp[i][j + 1], dp[i + 1][j]); } } } return dp[l1][l2]; } }  72题 https://leetcode-cn.com/problems/edit-distance/  /** * 给你两个单词word1 和word2， * 请你计算出将word1转换成word2 * 所使用的最少操作数。 *  * 你可以对一个单词进行如下三种操作： *  * 插入一个字符 * 删除一个字符 * 替换一个字符 *  * 来源：力扣（LeetCode） * 链接：https://leetcode-cn.com/problems/edit-distance * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 * * @author leilei */ public class Solution { public int minDistance(String word1, String word2) { if (word1.isEmpty() || word2.isEmpty()) { return Math.max(word1.length(), word2.length()); } int n = word1.length(); int m = word2.length(); // dp[][] 里面要保存多一位  int[][] dp = new int[n + 1][m + 1]; for (int i = 0; i  n; i++) { dp[i][0] = i; } for (int j = 0; j  m; j++) { dp[0][j] = j; } for (int i = 1; i  n; i++) { for (int j = 1; j  m; j++) { if (word1.charAt(i - 1) == word2.charAt(j - 1)) { dp[i][j] = dp[i - 1][j - 1]; } else { dp[i][j] = Math.min(Math.min(dp[i - 1][j], dp[i][j - 1]), dp[i - 1][j - 1]) + 1; } } } return dp[n][m]; } }  10 题 https://leetcode-cn.com/problems/regular-expression-matching  public class DPSolution { public boolean isMatch(String s, String p) { // 构建线性动态规划二维数组  boolean[][] dp = new boolean[s.length() + 1][p.length() + 1]; // 初始状态实际上是end of string, 思路从后往前推  dp[s.length()][p.length()] = true; for (int i = s.length(); i = 0; i--) { for (int j = p.length() - 1; j = 0; j--) { // i, j 的 字面匹配结果  boolean firstMatch = i  s.length() \u0026\u0026 (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.'); // 更新dp[i][j] 状态  // 如果 j + 1的位置出现 '*' 则dp[i][j] 的判断需要考虑 *代表 0 个还是n个  // 如果是代表 =1 个 则 dp[i][j] 需要考虑的一个上状态是dp[i+1][j] 或者是dp[i][j+2] (不是j + 1因为 * 占一个位置)  // 如果是代表 0 个， 则firstMatch 无用, 且需要考虑的上一个状态是dp[i][j+2] 位置  if (j  p.length() - 1 \u0026\u0026 p.charAt(j + 1) == '*') { dp[i][j] = (firstMatch \u0026\u0026 (dp[i + 1][j] || dp[i][j + 2])) || (!firstMatch \u0026\u0026 (dp[i][j + 2])); } else { dp[i][j] = firstMatch \u0026\u0026 dp[i + 1][j + 1]; } } } return dp[0][0]; } } public class Solution { public boolean isMatch(String s, String p) { if (p.isEmpty()) { return s.isEmpty(); } boolean firstMatch = !s.isEmpty() \u0026\u0026 (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.'); if (p.length() = 2 \u0026\u0026 p.charAt(1) == '*') { return isMatch(s, p.substring(2)) || (firstMatch \u0026\u0026 isMatch(s.substring(1), p)); } else { return firstMatch \u0026\u0026 isMatch(s.substring(1), p.substring(1)); } } } 区间DP  312题 https://leetcode-cn.com/problems/burst-balloons/  /** * 戳气球 * 有 n 个气球，编号为0 到 n - 1，每个气球上都标有一个数字，这些数字存在数组 nums 中。 *  * 现在要求你戳破所有的气球。戳破第 i 个气球，你可以获得 nums[i - 1] * nums[i] * nums[i + 1] 枚硬币。 * 这里的 i - 1 和 i + 1 代表和 i 相邻的两个气球的序号。 * 如果 i - 1或 i + 1 超出了数组的边界，那么就当它是一个数字为 1 的气球。 * *  * 求所能获得硬币的最大数量。 *  * 来源：力扣（LeetCode） * 链接：https://leetcode-cn.com/problems/burst-balloons * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 * * @author leilei */ public class Solution { public int maxCoins(int[] nums) { final int n = nums.length; int[] values = new int[n + 2]; // for (int i = 0; i // values[i + 1] = nums[i]; // }  System.arraycopy(nums, 0, values, 1, n); values[0] = values[n + 1] = 1; int[][] dp = new int[n + 2][n + 2]; for (int l = 1; l  n; ++l) { for (int i = 1; i + l  n + 1; ++i) { int j = i + l - 1; int best = 0; for (int k = i; k  j; ++k) { best = Math.max(best, dp[i][k - 1] + values[i - 1] * values[k] * values[j + 1] + dp[k + 1][j]); } dp[i][j] = best; } } return dp[1][n]; } } 背包DP  332题 https://leetcode-cn.com/problems/coin-change  /** * 给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回-1。 *  * 你可以认为每种硬币的数量是无限的 *  * 来源：力扣（LeetCode） * 链接：https://leetcode-cn.com/problems/coin-change * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 * * @author leilei */ class Solution { public int coinChange(int[] coins, int amount) { int max = amount + 1; int[] dp = new int[amount + 1]; Arrays.fill(dp, max); dp[0] = 0; for (int i = 1; i  amount; i++) { for (int coin : coins) { if (coin  i) { dp[i] = Math.min(dp[i], dp[i - coin] + 1); } } } return dp[amount]  amount ? -1 : dp[amount]; } }  518题 https://leetcode-cn.com/problems/coin-change-2/  /** * 零钱对换 II * * @author leilei */ public class Solution { public int change(int amount, int[] coins) { int[] dp = new int[amount + 1]; dp[0] = 1; for (int coin : coins) { for (int i = 0; i  amount - coin; ++i) { dp[i + coin] += dp[i]; } } return dp[amount]; } } 不同算法的区别 动态规划 FROM https://oi-wiki.org/dp/\n动态规划（Dynamic programming，简称 DP）是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。\n动态规划常常适用于有重叠子问题和最优子结构性质的问题，动态规划方法所耗时间往往远少于朴素解法。\n动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。\n通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需要同一个子问题解之时直接查表。这种做法在重复子问题的数目关于输入的规模呈指数增长时特别有用。\n严格意义上，动态规划只能用来解决最优化问题，但在 OI 中，计数等非最优化问题的递推解法也常被不规范地称作 DP。事实上，动态规划与其它类型的递推的确有很多相似之处，学习时可以注意它们之间的异同。\n贪心算法 FROM https://oi-wiki.org/basic/greedy/\n贪心算法（英语：greedy algorithm），是用计算机来模拟一个“贪心”的人做出决策的过程。这个人十分贪婪，每一步行动总是按某种指标选取最优的操作。而且他目光短浅，总是只看眼前，并不考虑以后可能造成的影响。\n可想而知，并不是所有的时候贪心法都能获得最优解，所以一般使用贪心法的时候，都要确保自己能证明其正确性。\n贪心算法在有最优子结构的问题中尤为有效。最优子结构的意思是问题能够分解成子问题来解决，子问题的最优解能递推到最终问题的最优解\n贪心算法与动态规划的不同在于它对每个子问题的解决方案都做出选择，不能回退。动态规划则会保存以前的运算结果，并根据以前的结果对当前进行选择，有回退功能。\n举个例子 45 题 https://leetcode-cn.com/problems/jump-game-ii/\n 贪心算法  /** * 贪心解法 *  * jump as far as possible *  * 每次步骤尽量走最远 * * @author leilei */ public class GreedySolution { public int jump(int[] nums) { // 需要跳跃的次数  int steps = 0; // near 上一个点能达到的最远的距离  int near = 0; // far 表示在 点i 通过一个step 能到达的最远距离  int far = 0; for (int i = 0; i  nums.length; i++) { if (i  near) { ++steps; // 之前能达到的最远距离  near = far; } // 在该点 next step 最远的距离  far = Math.max(far, i + nums[i]); } return steps; } public static void main(String[] args) { int[] nums = {2, 3, 1, 2, 4, 2, 3}; GreedySolution solution = new GreedySolution(); System.out.println(solution.jump(nums)); } }  BFS 算法 (依葫芦画瓢版， 需要优化)  public class BFSSolution { private static final int INFINITY = Integer.MAX_VALUE; private boolean[] marked; private int[] distTo; public int jump(int[] nums) { marked = new boolean[nums.length]; distTo = new int[nums.length]; for (int v = 0; v  nums.length; v++) { distTo[v] = INFINITY; } bfs(nums); System.out.println(Arrays.toString(distTo)); return distTo[nums.length - 1]; } private void bfs(int[] nums) { QueueInteger queue = new LinkedList(); marked[0] = true; distTo[0] = 0; queue.add(0); while (!queue.isEmpty()) { int s = queue.poll(); int steps = nums[s]; for (int i = s; i  s + steps \u0026\u0026 i  nums.length; i++) { if (!marked[i]) { distTo[i] = distTo[s] + 1; marked[i] = true; queue.add(i); } if (i == nums.length -1) { break; } } } } public static void main(String[] args) { int[] nums = {2,3,1,1,4}; BFSSolution solution = new BFSSolution(); System.out.println(solution.jump(nums)); } } 第一种贪心算法输入输出示例如下：\n输入: [2, 3, 1, 1, 4] i nums[i] steps near far - - 0 0 0 0 2 0 0 2 1 3 1 2 4 2 1 1 2 4 3 1 2 4 4 4 4 2 4 8 122 题 https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/\n 贪心算法  class Solution { public int maxProfit(int[] prices) { int result = 0; for (int i = 0; i  prices.length; i++) { if (i + 1  prices.length \u0026\u0026 prices[i + 1]  prices[i]) { result += (prices[i + 1] - prices[i]); } } return result; } } 另外也可以使用DFS， DP相关思路求解。\n",
+  "wordCount" : "1535",
+  "inLanguage": "en",
+  "datePublished": "2021-06-24T22:06:15+08:00",
+  "dateModified": "2021-06-24T22:06:15+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://feyfree.github.io/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8%E5%8F%8A%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Feyfree Hugo Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://feyfree.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
-<body>
-  <nav class="u-background">
-  <div class="u-wrapper">
-    <ul class="Banner">
-      <li class="Banner-item Banner-item--title">
-        <a class="Banner-link u-clickable" href="/">Feyfree Hugo Site</a>
-      </li>
-      
-        <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/about/">About</a>
-        </li>
-      
-        <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/posts/">Posts</a>
-        </li>
-      
-        <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/tags/">Tags</a>
-        </li>
-      
-        <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/categories/">Categories</a>
-        </li>
-      
-        <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/index.xml">RSS</a>
-        </li>
-      
-    </ul>
-  </div>
-</nav>
-  <main>
-    <div class="u-wrapper">
-      <div class="u-padding">
-        
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-  <article>
-    <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8%E5%8F%8A%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/" rel="bookmark">动态规划入门及代码示例</a>
-  </h2>
-  
-    <time datetime="2021-06-24T22:06:15&#43;08:00">24 June, 2021</time>
-  
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://feyfree.github.io/" accesskey="h" title="Feyfree Hugo Site (Alt + H)">Feyfree Hugo Site</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://feyfree.github.io/posts/" title="文档">
+                    <span>文档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://feyfree.github.io/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://feyfree.github.io/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://feyfree.github.io/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-    <h1 id="动态规划入门">动态规划入门</h1>
-<h3 id="目录">目录</h3>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      动态规划入门及代码示例
+    </h1>
+    <div class="post-meta">June 24, 2021
+</div>
+  </header> 
+  <div class="post-content"><h1 id="动态规划入门">动态规划入门<a hidden class="anchor" aria-hidden="true" href="#动态规划入门">#</a></h1>
+<h3 id="目录">目录<a hidden class="anchor" aria-hidden="true" href="#目录">#</a></h3>
 <ul>
 <li>什么是动态规划</li>
 <li>如何用动态规划解决问题</li>
 <li>对于动态规划和其他算法的一些比较</li>
 </ul>
-<h2 id="什么是动态规划">什么是动态规划</h2>
+<h2 id="什么是动态规划">什么是动态规划<a hidden class="anchor" aria-hidden="true" href="#什么是动态规划">#</a></h2>
 <ul>
 <li>
 <p><strong>概括</strong></p>
@@ -122,7 +245,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="动态规划的分类">动态规划的分类</h2>
+<h2 id="动态规划的分类">动态规划的分类<a hidden class="anchor" aria-hidden="true" href="#动态规划的分类">#</a></h2>
 <ul>
 <li>线性DP</li>
 <li>区间DP</li>
@@ -131,8 +254,8 @@
 <li>树形DP</li>
 <li>状压DP</li>
 </ul>
-<h2 id="例题展示">例题展示</h2>
-<h3 id="线性dp">线性DP</h3>
+<h2 id="例题展示">例题展示<a hidden class="anchor" aria-hidden="true" href="#例题展示">#</a></h2>
+<h3 id="线性dp">线性DP<a hidden class="anchor" aria-hidden="true" href="#线性dp">#</a></h3>
 <ul>
 <li>53题	https://leetcode-cn.com/problems/maximum-subarray/</li>
 </ul>
@@ -336,7 +459,7 @@
         <span style="color:#f92672">}</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><h3 id="区间dp">区间DP</h3>
+</code></pre></div><h3 id="区间dp">区间DP<a hidden class="anchor" aria-hidden="true" href="#区间dp">#</a></h3>
 <ul>
 <li>312题 <a href="https://leetcode-cn.com/problems/burst-balloons/">https://leetcode-cn.com/problems/burst-balloons/</a></li>
 </ul>
@@ -381,7 +504,7 @@
         <span style="color:#66d9ef">return</span> dp<span style="color:#f92672">[</span>1<span style="color:#f92672">][</span>n<span style="color:#f92672">];</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><h3 id="背包dp">背包DP</h3>
+</code></pre></div><h3 id="背包dp">背包DP<a hidden class="anchor" aria-hidden="true" href="#背包dp">#</a></h3>
 <ul>
 <li>332题 <a href="https://leetcode-cn.com/problems/coin-change">https://leetcode-cn.com/problems/coin-change</a></li>
 </ul>
@@ -432,21 +555,21 @@
         <span style="color:#66d9ef">return</span> dp<span style="color:#f92672">[</span>amount<span style="color:#f92672">];</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><h2 id="不同算法的区别">不同算法的区别</h2>
-<h3 id="动态规划">动态规划</h3>
+</code></pre></div><h2 id="不同算法的区别">不同算法的区别<a hidden class="anchor" aria-hidden="true" href="#不同算法的区别">#</a></h2>
+<h3 id="动态规划">动态规划<a hidden class="anchor" aria-hidden="true" href="#动态规划">#</a></h3>
 <p>FROM <a href="https://oi-wiki.org/dp/">https://oi-wiki.org/dp/</a></p>
 <p>动态规划（Dynamic programming，简称 DP）是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。</p>
 <p>动态规划常常适用于有重叠子问题和最优子结构性质的问题，动态规划方法所耗时间往往远少于朴素解法。</p>
 <p>动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。</p>
 <p>通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需要同一个子问题解之时直接查表。这种做法在重复子问题的数目关于输入的规模呈指数增长时特别有用。</p>
 <p>严格意义上，动态规划只能用来解决最优化问题，但在 OI 中，计数等非最优化问题的递推解法也常被不规范地称作 DP。事实上，动态规划与其它类型的递推的确有很多相似之处，学习时可以注意它们之间的异同。</p>
-<h3 id="贪心算法">贪心算法</h3>
+<h3 id="贪心算法">贪心算法<a hidden class="anchor" aria-hidden="true" href="#贪心算法">#</a></h3>
 <p>FROM <a href="https://oi-wiki.org/basic/greedy/">https://oi-wiki.org/basic/greedy/</a></p>
 <p>贪心算法（英语：greedy algorithm），是用计算机来模拟一个“贪心”的人做出决策的过程。这个人十分贪婪，每一步行动总是按某种指标选取最优的操作。而且他目光短浅，总是只看眼前，并不考虑以后可能造成的影响。</p>
 <p>可想而知，并不是所有的时候贪心法都能获得最优解，所以一般使用贪心法的时候，都要确保自己能证明其正确性。</p>
 <p>贪心算法在有最优子结构的问题中尤为有效。最优子结构的意思是问题能够分解成子问题来解决，子问题的最优解能递推到最终问题的最优解</p>
 <p>贪心算法与动态规划的不同在于它对每个子问题的解决方案都做出选择，不能回退。动态规划则会保存以前的运算结果，并根据以前的结果对当前进行选择，有回退功能。</p>
-<h3 id="举个例子">举个例子</h3>
+<h3 id="举个例子">举个例子<a hidden class="anchor" aria-hidden="true" href="#举个例子">#</a></h3>
 <p><strong>45 题 <a href="https://leetcode-cn.com/problems/jump-game-ii/">https://leetcode-cn.com/problems/jump-game-ii/</a></strong></p>
 <ul>
 <li>贪心算法</li>
@@ -562,51 +685,83 @@ i    nums<span style="color:#f92672">[</span>i<span style="color:#f92672">]</spa
 <span style="color:#f92672">}</span>
 </code></pre></div><p>另外也可以使用DFS， DP相关思路求解。</p>
 
-    
 
-
-  
-
-  
-
-
-
-
-
-  <footer>
-    
-      
-    
-      
-        <ul class="Tags">
-          
-            <li class="Tags-item u-background">
-              <a class="Tags-link u-clickable" href="/tags/dp/" rel="tag">DP</a>
-            </li>
-          
-        </ul>
-      
-    
+  </div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://feyfree.github.io/tags/dp/">DP</a></li>
+    </ul>
   </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://feyfree.github.io/">Feyfree Hugo Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
 
-    
-  
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
 
-  </article>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
 
-      </div>
-    </div>
-  </main>
-  
-  <footer class="Footer">
-    <div class="u-wrapper">
-      <div class="u-padding">
-        Thanks for <a href="https://gohugo.io/" rel="hugo">Hugo</a> And  <a href="https://themes.gohugo.io/hugo-flex/" rel="hugo">Hugo-Flex</a>.
-      </div>
-    </div>
-  </footer>
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
 
+</script>
 </body>
 
 </html>

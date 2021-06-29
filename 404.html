@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Posts | Feyfree Hugo Site</title>
+<title>404 Page not found | Feyfree Hugo Site</title>
 <meta name="keywords" content="" />
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="canonical" href="https://feyfree.github.io/posts/" />
+<link rel="canonical" href="https://feyfree.github.io/404.html" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.35cd0f65a15cafa92372b8313deef5960aae04b90ad722f2bbf509eb0468137e.css" integrity="sha256-Nc0PZaFcr6kjcrgxPe71lgquBLkK1yLyu/UJ6wRoE34=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://feyfree.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://feyfree.github.io/favicon-16x16.png">
@@ -19,31 +19,15 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.83.1" />
-<link rel="alternate" type="application/rss+xml" href="https://feyfree.github.io/posts/index.xml">
-<meta property="og:title" content="Posts" />
+<meta property="og:title" content="404 Page not found" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://feyfree.github.io/posts/" />
+<meta property="og:url" content="https://feyfree.github.io/404.html" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:title" content="404 Page not found"/>
 <meta name="twitter:description" content=""/>
 
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://feyfree.github.io/posts/"
-    }
-  ]
-}
-</script>
 </head>
 
 <body class="list" id="top">
@@ -125,7 +109,7 @@
         <ul id="menu">
             <li>
                 <a href="https://feyfree.github.io/posts/" title="文档">
-                    <span class="active">文档</span>
+                    <span>文档</span>
                 </a>
             </li>
             <li>
@@ -146,58 +130,8 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header">
-  <h1>Posts</h1>
-</header>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>分布式操作系统杂谈</h2>
-  </header>
-  <section class="entry-content">
-    <p>前言 前不久刚刚看完《分布式系统概念与设计》这本书， 对于此前做开发的时候积累的一些分布式的相关的知识而言， 这本书是一个很好的总结。 下面我结合自己的一些积累还有这本书的相关知识点， 对自己理解的分布式这个概念做一个简单的分享！
-分布式系统的特征  分布式系统是其组件分布在联网的计算机上， 组件之间通过传递消息进行通信和动作协调的系统。 该定义引出了分布式系统的下列重要特征： 组件的并发性， 缺乏全局时钟， 组件故障的独立性。
- 上述引自《分布式系统概念与设计》第一章， 特别强调的是 资源共享是构造分布式系统的主要动机。 而资源当中数据是至关重要的。
-为什么需要分布式系统 这个是在听MIT6.824 这门课， Morris 老师画的一个简图。 为了追求High-Performance， 所以会采用Sharding的做法， 为了最大程度的提升系统的稳定， 所以会采用容错的机制， 容错的机制意味着数据的复制， 而复制则会产生不一致性， 不一致性就要增加通信， 而增加通信 又会造成 Low-Performance 。
-这个是分布式系统整体结构的一个演示。在各个阶段， 都有很多出色的设计来实现对应的愿景。 在分布式系统中有一个非常著名的理论叫做CAP 理论， 实际上我们也可以看到 实际的High-Performance 也是需要好多妥协的， 不同场景对High-Performance 的要求也是有区别的。
-分布式系统的关键词  网络 操作系统 文件存储系统 全局时钟 分布式协议 分布式事务  </p>
-  </section>
-  <footer class="entry-footer">June 28, 2021</footer>
-  <a class="entry-link" aria-label="post link to 分布式操作系统杂谈" href="https://feyfree.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9D%82%E8%B0%88/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>动态规划入门及代码示例</h2>
-  </header>
-  <section class="entry-content">
-    <p>动态规划入门 目录  什么是动态规划 如何用动态规划解决问题 对于动态规划和其他算法的一些比较  什么是动态规划   概括
-（Dynamic Programming）求解一类最优 化问题， 将原问题划分成为子问题， 子问 题有非常完整的结构。
-  DP术语
- 状态，状态转移方程 子问题图: 以状态为点， 以状态之间的转 移为边，子问题图是一个DAG    DP的顺序
- 递推（bottom-up method） 记忆化搜索（top-down with memorization）    问题的内涵
- 最值 方案， 方案数    动态规划的分类  线性DP 区间DP 背包DP 环形DP 树形DP 状压DP  例题展示 线性DP  53题	https://leetcode-cn.com/problems/maximum-subarray/  /** * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。 * &lt;p&gt; * 输入: [-2,1,-3,4,-1,2,1,-5,4] * 输出: 6 * 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。 * &lt;p&gt; * 思路: 线性扫描算法 * &lt;p&gt; * 前i个元素中, 最大子数组要么在前 i - 1 中 ---&gt; 存储在maxSoFar * 要么其结束位置在 i ---&gt; 存储在maxEndingHere * * @author leilei */ public class Solution { public int maxSubArray(int[] nums) { boolean belowZero = true; int m = Integer....</p>
-  </section>
-  <footer class="entry-footer">June 24, 2021</footer>
-  <a class="entry-link" aria-label="post link to 动态规划入门及代码示例" href="https://feyfree.github.io/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8%E5%8F%8A%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>前言</h2>
-  </header>
-  <section class="entry-content">
-    <p>博客的来由 心里一直有自己建立一个个人写作的一个博客。 开始学Python的时候， 后台学了Flask 和 Django 这两个web框架， 对照着Facebook的BootStrap， 前后来回折腾了不少个博客的残次品。 后来就逐渐放弃了。
-后来个人的开发语言迁移到了Java上面，又在想能不能用SpringBoot和Vue整合一个博客出来， 动手又吭哧吭哧花了不少时间， 折腾了点残次品出来。
-后来自己尝试自己使用公众号去写文章， 但是毕竟微信平台， 约束多。
-最后选择Github Pages， 简单，能像写代码那样写文章， 省去了不少自己搭建博客的各类成本。很方便。 采用的是Hugo &#43; hugo-flex， 我觉得能满足我的需求。 并且简单。根据教程， 基本就能很快搭建好这样一个静态的博客网站。
-博客会记录一些自己的刷题过程， 在团队的公开分享， 日常的开发踩坑， 以及读书感悟。
-期待下面的自己写文字的时光！</p>
-  </section>
-  <footer class="entry-footer">June 22, 2021</footer>
-  <a class="entry-link" aria-label="post link to 前言" href="https://feyfree.github.io/posts/init/"></a>
-</article>
+<main class="main">
+<div class="not-found">404</div>
     </main>
     <footer class="footer">
     <span>&copy; 2021 <a href="https://feyfree.github.io/">Feyfree Hugo Site</a></span>
