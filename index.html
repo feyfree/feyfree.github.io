@@ -176,12 +176,43 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>计算机网络之TCP</h2>
+  </header>
+  <section class="entry-content">
+    <p>TCP 的主要特点  TCP是面向连接的运输层协议；所谓面向连接就是双方传输数据之前，必须先建立一条通道，例如三次握手就是建议通道的一个过程，而四次挥手则是结束销毁通道的一个其中过程。 每一条TCP连接只能有两个端点（即两个套接字），只能是点对点的； TCP提供可靠的传输服务。传送的数据无差错、不丢失、不重复、按序到达； TCP提供全双工通信。允许通信双方的应用进程在任何时候都可以发送数据，因为两端都设有发送缓存和接受缓存； 面向字节流。虽然应用程序与TCP交互是一次一个大小不等的数据块，但TCP把这些数据看成一连串无结构的字节流，它不保证接收方收到的数据块和发送方发送的数据块具有对应大小关系，例如，发送方应用程序交给发送方的TCP10个数据块，但就受访的TCP可能只用了4个数据块久保收到的字节流交付给上层的应用程序，但字节流完全一样。  三次握手和四次挥手 所谓三次握手(Three-way Handshake)，是指建立一个 TCP 连接时，需要客户端和服务器总共发送3个包。
+三次握手的目的是连接服务器指定端口，建立 TCP 连接，并同步连接双方的序列号和确认号，交换 TCP 窗口大小信息。在 socket 编程中，客户端执行 connect() 时。将触发三次握手。
+  第一次握手(SYN=1, seq=x):
+客户端发送一个 TCP 的 SYN 标志位置1的包，指明客户端打算连接的服务器的端口，以及初始序号 X,保存在包头的序列号(Sequence Number)字段里。
+发送完毕后，客户端进入 SYN_SEND 状态。
+  第二次握手(SYN=1, ACK=1, seq=y, ACKnum=x&#43;1):
+服务器发回确认包(ACK)应答。即 SYN 标志位和 ACK 标志位均为1。服务器端选择自己 ISN 序列号，放到 Seq 域里，同时将确认序号(Acknowledgement Number)设置为客户的 ISN 加1，即X&#43;1。 发送完毕后，服务器端进入 SYN_RCVD 状态。
+  第三次握手(ACK=1，ACKnum=y&#43;1)
+客户端再次发送确认包(ACK)，SYN 标志位为0，ACK 标志位为1，并且把服务器发来 ACK 的序号字段&#43;1，放在确定字段中发送给对方，并且在数据段放写ISN的&#43;1
+发送完毕后，客户端进入 ESTABLISHED 状态，当服务器端接收到这个包时，也进入 ESTABLISHED 状态，TCP 握手结束。...</p>
+  </section>
+  <footer class="entry-footer">June 30, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;feyfree</footer>
+  <a class="entry-link" aria-label="post link to 计算机网络之TCP" href="https://feyfree.github.io/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B9%8Btcp/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>分布式操作系统 网络篇</h2>
   </header>
   <section class="entry-content">
-    <p></p>
+    <p>分布式系统使用局域网， 广域网和互连网络进行通信。 底层网络的性能，可靠性，可伸缩性， 移动性以及服务质量特征都影响着分布式系统的行为， 因而也影响这些系统的设计。 为了适应用户需求的改变， 无限网络和有服务质量保障的高性能网络应运而生。————《分布式系统概论与设计》
+ 分布式系统的连网问题   性能
+ 延迟 数据传输率    可伸缩性
+  可靠性
+  安全性
+  移动性
+  服务质量
+在传输和处理实时多媒体数据流时满足期限要求的能力
+  组播
+  网络原理 1. 数据包传输 逻辑单元 对应数据包， 使用长度有限的数据包是为了
+ 网络中的每台计算及能为可能到来的最大的数据包分配足够的缓冲区间 避免长消息不加分割地传递所引起的为等待通信通道空闲而出现的过度延迟  2. 数据流 3. 交换模式  广播 电路交换 包交换 帧中继  4. 协议 5. 路由 6. 拥塞控制 网络的能力受到通信链路性能和交换节点性能的限制。当任何链路或节点的负载接近其负载能力的时候， 试图发送数据包的主机就会建立队列， 传输数据的中间节点因为被其他数据传输所阻塞而建立队列。 如果负载继续维持在这样的高水平， 那么等待发送的队列就会不断增长，直到达到可用的缓冲区空间的上限为止。
+为了避免数据包在网络中传递时经过拥塞节点而被丢弃的情况，最好将数据包保存在发生拥塞之前的节点中知道拥塞减少。 这固然会增加数据包的延迟， 但不会极大降低整个网络的吞吐量。 用于实现该目的的技术成为拥塞控制。...</p>
   </section>
-  <footer class="entry-footer">June 30, 2021&nbsp;·&nbsp;0 min&nbsp;·&nbsp;feyfree</footer>
+  <footer class="entry-footer">June 30, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;feyfree</footer>
   <a class="entry-link" aria-label="post link to 分布式操作系统 网络篇" href="https://feyfree.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E7%BD%91%E7%BB%9C%E7%AF%87/"></a>
 </article>
 
@@ -232,22 +263,11 @@ public class LRUCache { static class Node { int key; int value; Node prev; Node 
   <footer class="entry-footer">June 24, 2021&nbsp;·&nbsp;8 min&nbsp;·&nbsp;feyfree</footer>
   <a class="entry-link" aria-label="post link to 动态规划入门及代码示例" href="https://feyfree.github.io/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8%E5%8F%8A%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>前言</h2>
-  </header>
-  <section class="entry-content">
-    <p>博客的来由 心里一直有自己建立一个个人写作的一个博客。 开始学Python的时候， 后台学了Flask 和 Django 这两个web框架， 对照着Facebook的BootStrap， 前后来回折腾了不少个博客的残次品。 后来就逐渐放弃了。
-后来个人的开发语言迁移到了Java上面，又在想能不能用SpringBoot和Vue整合一个博客出来， 动手又吭哧吭哧花了不少时间， 折腾了点残次品出来。
-后来自己尝试自己使用公众号去写文章， 但是毕竟微信平台， 约束多。
-最后选择Github Pages， 简单，能像写代码那样写文章， 省去了不少自己搭建博客的各类成本。很方便。 采用的是Hugo &#43; hugo-flex， 我觉得能满足我的需求。 并且简单。根据教程， 基本就能很快搭建好这样一个静态的博客网站。
-博客会记录一些自己的刷题过程， 在团队的公开分享， 日常的开发踩坑， 以及读书感悟。
-期待下面的自己写文字的时光！</p>
-  </section>
-  <footer class="entry-footer">June 22, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;feyfree</footer>
-  <a class="entry-link" aria-label="post link to 前言" href="https://feyfree.github.io/posts/init/"></a>
-</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://feyfree.github.io/page/2/">Next Page »</a>
+  </nav>
+</footer>
     </main>
     <footer class="footer">
     <span>&copy; 2021 <a href="https://feyfree.github.io/">Feyfree Hugo Site</a></span>
