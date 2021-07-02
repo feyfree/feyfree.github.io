@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Interview on Feyfree Hugo Site</title>
+    <link>https://feyfree.github.io/categories/interview/</link>
+    <description>Recent content in Interview on Feyfree Hugo Site</description>
+    <image>
+      <url>https://feyfree.github.io/papermod-cover.png</url>
+      <link>https://feyfree.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Jul 2021 18:55:52 +0800</lastBuildDate><atom:link href="https://feyfree.github.io/categories/interview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021 Interview Preparations</title>
+      <link>https://feyfree.github.io/posts/2021-interview-preparations/</link>
+      <pubDate>Thu, 01 Jul 2021 18:55:52 +0800</pubDate>
+      
+      <guid>https://feyfree.github.io/posts/2021-interview-preparations/</guid>
+      <description>这里记录我在2021年7月份开始准备的面试计划, 循序渐进
+20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换 并发编程 - 线程池相关知识 LeetCode 21题 - 30 题思路复习 你经历过的最大的挑战  </description>
+    </item>
+    
+  </channel>
+</rss>
