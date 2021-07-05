@@ -8,7 +8,7 @@
 <title>2021 Interview Preparations | Feyfree Hugo Site</title>
 <meta name="keywords" content="" />
 <meta name="description" content="这里记录我在2021年7月份开始准备的面试计划, 循序渐进
-20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210704  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  ">
+20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210705  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  20210706  线程模型 - Reactor和Proactor 操作系统之mmap，copy-on-write 分布式操作系统之全局时钟  20210707  线程模型  ">
 <meta name="author" content="feyfree">
 <link rel="canonical" href="https://feyfree.github.io/posts/2021-interview-preparations/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.35cd0f65a15cafa92372b8313deef5960aae04b90ad722f2bbf509eb0468137e.css" integrity="sha256-Nc0PZaFcr6kjcrgxPe71lgquBLkK1yLyu/UJ6wRoE34=" rel="preload stylesheet" as="style">
@@ -24,7 +24,7 @@
 <meta name="generator" content="Hugo 0.84.2" />
 <meta property="og:title" content="2021 Interview Preparations" />
 <meta property="og:description" content="这里记录我在2021年7月份开始准备的面试计划, 循序渐进
-20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210704  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  " />
+20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210705  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  20210706  线程模型 - Reactor和Proactor 操作系统之mmap，copy-on-write 分布式操作系统之全局时钟  20210707  线程模型  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://feyfree.github.io/posts/2021-interview-preparations/" /><meta property="og:image" content="https://feyfree.github.io/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-07-01T18:55:52&#43;08:00" />
@@ -35,7 +35,7 @@
 
 <meta name="twitter:title" content="2021 Interview Preparations"/>
 <meta name="twitter:description" content="这里记录我在2021年7月份开始准备的面试计划, 循序渐进
-20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210704  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  "/>
+20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210705  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  20210706  线程模型 - Reactor和Proactor 操作系统之mmap，copy-on-write 分布式操作系统之全局时钟  20210707  线程模型  "/>
 
 
 <script type="application/ld+json">
@@ -64,12 +64,12 @@
   "@type": "BlogPosting",
   "headline": "2021 Interview Preparations",
   "name": "2021 Interview Preparations",
-  "description": "这里记录我在2021年7月份开始准备的面试计划, 循序渐进\n20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210704  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  ",
+  "description": "这里记录我在2021年7月份开始准备的面试计划, 循序渐进\n20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210705  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  20210706  线程模型 - Reactor和Proactor 操作系统之mmap，copy-on-write 分布式操作系统之全局时钟  20210707  线程模型  ",
   "keywords": [
     
   ],
-  "articleBody": "这里记录我在2021年7月份开始准备的面试计划, 循序渐进\n20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210704  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  ",
-  "wordCount" : "52",
+  "articleBody": "这里记录我在2021年7月份开始准备的面试计划, 循序渐进\n20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210705  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  20210706  线程模型 - Reactor和Proactor 操作系统之mmap，copy-on-write 分布式操作系统之全局时钟  20210707  线程模型  ",
+  "wordCount" : "60",
   "inLanguage": "en",
   "datePublished": "2021-07-01T18:55:52+08:00",
   "dateModified": "2021-07-01T18:55:52+08:00",
@@ -216,7 +216,11 @@
                 <li>
                     <a href="#20210703" aria-label="20210703">20210703</a></li>
                 <li>
-                    <a href="#20210704" aria-label="20210704">20210704</a>
+                    <a href="#20210705" aria-label="20210705">20210705</a></li>
+                <li>
+                    <a href="#20210706" aria-label="20210706">20210706</a></li>
+                <li>
+                    <a href="#20210707" aria-label="20210707">20210707</a>
                 </li>
             </ul>
         </div>
@@ -242,16 +246,31 @@
 <li><input checked="" disabled="" type="checkbox"> 并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier</li>
 <li><input checked="" disabled="" type="checkbox"> LeetCode 31题 - 40 题思路复习</li>
 </ul>
-<h2 id="20210704">20210704<a hidden class="anchor" aria-hidden="true" href="#20210704">#</a></h2>
+<h2 id="20210705">20210705<a hidden class="anchor" aria-hidden="true" href="#20210705">#</a></h2>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> 并发编程 - 线程池</li>
 <li><input checked="" disabled="" type="checkbox"> LeetCode 41题 - 50 题思路复习</li>
+</ul>
+<h2 id="20210706">20210706<a hidden class="anchor" aria-hidden="true" href="#20210706">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> 线程模型 - Reactor和Proactor</li>
+<li><input disabled="" type="checkbox"> 操作系统之mmap，copy-on-write</li>
+<li><input disabled="" type="checkbox"> 分布式操作系统之全局时钟</li>
+</ul>
+<h2 id="20210707">20210707<a hidden class="anchor" aria-hidden="true" href="#20210707">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> 线程模型</li>
 </ul>
 
 
   </div>
   <footer class="post-footer">
 <nav class="paginav">
+  <a class="prev" href="https://feyfree.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E9%80%BB%E8%BE%91%E6%97%B6%E9%92%9F/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>分布式操作系统 逻辑时钟</span>
+  </a>
   <a class="next" href="https://feyfree.github.io/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B9%8Btcp/">
     <span class="title">Next Page »</span>
     <br>

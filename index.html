@@ -176,11 +176,34 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>分布式操作系统 逻辑时钟</h2>
+  </header>
+  <section class="entry-content">
+    <p>背景 在《分布式系统:概念与设计》书中，在第14章详细介绍了分布式系统与时间相关的有关问题。时间是理解分布式运行时如何展开的一个重要的理论概念。理解分布式系统中的时序的问题， 对理解分布式一致性有很大的帮助。 这篇博客主要介绍一个重点的概念：逻辑时钟。
+逻辑时间与逻辑时钟  因为我们不能在一个分布式系统上完美地同步时钟， 因此通常我们不能使用物理时间指出在分布式系统中发生任何一对时间的顺序
+——Leslie Lamport[1978]
+ 对于一个分布式系统中， 很难有一个全局时钟这样一个存在，所以在分布式系统中， 根据各自的时间戳来确定事件的先后顺序是不一定准确的。 这时候引入一个逻辑时间的概念.
+因果序   如果两个事件发生在同一个进程中 $$ Pi(i =1,2,…N) $$ 那么他们发生的顺序是他们发生的顺序是Pi观察到的顺序
+  当消息在不同进程之间发送时候， 发送消息的事件在接受消息的事件之前发生
+  Lamport 将推广这两种关系得到的偏序成为发生在先关系。有时也称为因果序或潜在的因果序
+所以先后关系关系不一定存在因果关系， 但是因果关系一定存在先后关系。
+逻辑时钟 Lamport 发明了一种简单的机制， 称为逻辑时钟(Logical Clock)， 它可数字化地捕捉发生在先顺序。Lamport逻辑时钟是一个单调增长的软件计数器， 它的值与任何物理时钟无关。每个进程Pi 维护它自己的逻辑时钟Li，进程用它给事件加上所谓的Lamport时间戳（Lamport TimeStamp）。 我们用Li(e) 表示Pi的事件e的时间戳， 用L(e) 表示发生在任一进程中的事件e的时间戳。
+为了捕获发生在先关系→， 进程按下列规则修改它们的逻辑时钟， 并在消息中传递它们的逻辑时钟值
+  LC1: 在进程Pi 发出每个事件之前, Li 加 1: Li := Li &#43; 1
+  LC2:
+(a) 当进程Pi 发送消息m时， 在m中附加值 t = Li...</p>
+  </section>
+  <footer class="entry-footer">July 5, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;feyfree</footer>
+  <a class="entry-link" aria-label="post link to 分布式操作系统 逻辑时钟" href="https://feyfree.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E9%80%BB%E8%BE%91%E6%97%B6%E9%92%9F/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>2021 Interview Preparations</h2>
   </header>
   <section class="entry-content">
     <p>这里记录我在2021年7月份开始准备的面试计划, 循序渐进
-20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210704  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  </p>
+20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210705  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  20210706  线程模型 - Reactor和Proactor 操作系统之mmap，copy-on-write 分布式操作系统之全局时钟  20210707  线程模型  </p>
   </section>
   <footer class="entry-footer">July 1, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;feyfree</footer>
   <a class="entry-link" aria-label="post link to 2021 Interview Preparations" href="https://feyfree.github.io/posts/2021-interview-preparations/"></a>
@@ -242,22 +265,6 @@ public class LRUCache { static class Node { int key; int value; Node prev; Node 
   </section>
   <footer class="entry-footer">June 29, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;feyfree</footer>
   <a class="entry-link" aria-label="post link to LRU代码实现" href="https://feyfree.github.io/posts/lru%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>分布式操作系统杂谈</h2>
-  </header>
-  <section class="entry-content">
-    <p>前言 前不久刚刚看完《分布式系统概念与设计》这本书， 对于此前做开发的时候积累的一些分布式的相关的知识而言， 这本书是一个很好的总结。 下面我结合自己的一些积累还有这本书的相关知识点， 对自己理解的分布式这个概念做一个简单的分享！
-分布式系统的特征  分布式系统是其组件分布在联网的计算机上， 组件之间通过传递消息进行通信和动作协调的系统。 该定义引出了分布式系统的下列重要特征： 组件的并发性， 缺乏全局时钟， 组件故障的独立性。
- 上述引自《分布式系统概念与设计》第一章， 特别强调的是 资源共享是构造分布式系统的主要动机。 而资源当中数据是至关重要的。
-为什么需要分布式系统 这个是在听MIT6.824 这门课， Morris 老师画的一个简图。 为了追求High-Performance， 所以会采用Sharding的做法， 为了最大程度的提升系统的稳定， 所以会采用容错的机制， 容错的机制意味着数据的复制， 而复制则会产生不一致性， 不一致性就要增加通信， 而增加通信 又会造成 Low-Performance 。
-这个是分布式系统整体结构的一个演示。在各个阶段， 都有很多出色的设计来实现对应的愿景。 在分布式系统中有一个非常著名的理论叫做CAP 理论， 实际上我们也可以看到 实际的High-Performance 也是需要好多妥协的， 不同场景对High-Performance 的要求也是有区别的。
-分布式系统的关键词  网络 操作系统 文件存储系统 全局时钟 分布式协议 分布式事务  </p>
-  </section>
-  <footer class="entry-footer">June 28, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;feyfree</footer>
-  <a class="entry-link" aria-label="post link to 分布式操作系统杂谈" href="https://feyfree.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9D%82%E8%B0%88/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

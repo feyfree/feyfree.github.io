@@ -10,7 +10,7 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jul 2021 18:55:52 +0800</lastBuildDate><atom:link href="https://feyfree.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jul 2021 13:59:12 +0800</lastBuildDate><atom:link href="https://feyfree.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于</title>
       <link>https://feyfree.github.io/about/</link>
@@ -24,13 +24,34 @@
     </item>
     
     <item>
+      <title>分布式操作系统 逻辑时钟</title>
+      <link>https://feyfree.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E9%80%BB%E8%BE%91%E6%97%B6%E9%92%9F/</link>
+      <pubDate>Mon, 05 Jul 2021 13:59:12 +0800</pubDate>
+      
+      <guid>https://feyfree.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E9%80%BB%E8%BE%91%E6%97%B6%E9%92%9F/</guid>
+      <description>背景 在《分布式系统:概念与设计》书中，在第14章详细介绍了分布式系统与时间相关的有关问题。时间是理解分布式运行时如何展开的一个重要的理论概念。理解分布式系统中的时序的问题， 对理解分布式一致性有很大的帮助。 这篇博客主要介绍一个重点的概念：逻辑时钟。
+逻辑时间与逻辑时钟  因为我们不能在一个分布式系统上完美地同步时钟， 因此通常我们不能使用物理时间指出在分布式系统中发生任何一对时间的顺序
+——Leslie Lamport[1978]
+ 对于一个分布式系统中， 很难有一个全局时钟这样一个存在，所以在分布式系统中， 根据各自的时间戳来确定事件的先后顺序是不一定准确的。 这时候引入一个逻辑时间的概念.
+因果序   如果两个事件发生在同一个进程中 $$ Pi(i =1,2,&amp;hellip;N) $$ 那么他们发生的顺序是他们发生的顺序是Pi观察到的顺序
+  当消息在不同进程之间发送时候， 发送消息的事件在接受消息的事件之前发生
+  Lamport 将推广这两种关系得到的偏序成为发生在先关系。有时也称为因果序或潜在的因果序
+所以先后关系关系不一定存在因果关系， 但是因果关系一定存在先后关系。
+逻辑时钟 Lamport 发明了一种简单的机制， 称为逻辑时钟(Logical Clock)， 它可数字化地捕捉发生在先顺序。Lamport逻辑时钟是一个单调增长的软件计数器， 它的值与任何物理时钟无关。每个进程Pi 维护它自己的逻辑时钟Li，进程用它给事件加上所谓的Lamport时间戳（Lamport TimeStamp）。 我们用Li(e) 表示Pi的事件e的时间戳， 用L(e) 表示发生在任一进程中的事件e的时间戳。
+为了捕获发生在先关系→， 进程按下列规则修改它们的逻辑时钟， 并在消息中传递它们的逻辑时钟值
+  LC1: 在进程Pi 发出每个事件之前, Li 加 1: Li := Li + 1
+  LC2:
+(a) 当进程Pi 发送消息m时， 在m中附加值 t = Li</description>
+    </item>
+    
+    <item>
       <title>2021 Interview Preparations</title>
       <link>https://feyfree.github.io/posts/2021-interview-preparations/</link>
       <pubDate>Thu, 01 Jul 2021 18:55:52 +0800</pubDate>
       
       <guid>https://feyfree.github.io/posts/2021-interview-preparations/</guid>
       <description>这里记录我在2021年7月份开始准备的面试计划, 循序渐进
-20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210704  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  </description>
+20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210705  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  20210706  线程模型 - Reactor和Proactor 操作系统之mmap，copy-on-write 分布式操作系统之全局时钟  20210707  线程模型  </description>
     </item>
     
     <item>
