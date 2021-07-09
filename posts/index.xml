@@ -39,7 +39,7 @@
       
       <guid>https://feyfree.github.io/posts/2021-interview-preparations/</guid>
       <description>这里记录我在2021年7月份开始准备的面试计划, 循序渐进
-20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210705  并发编程 - 线程池 LeetCode 41题 - 50 题思路复习  20210706  线程模型 - Reactor和Proactor 操作系统之mmap，copy-on-write 分布式操作系统之全局时钟  20210707  线程模型  </description>
+20210701  HashMap 和 ConcurrentHashMap 的区别，以及JDK 1.7 和 JDK 1.8 之间的差异 LeetCode 11题 - 20 题思路复习 你经历过的最大的挑战  20210702  并发编程 - 线程状态和转换, ThreadLocal 并发编程 - volatile vs synchronized LeetCode 21题 - 30 题思路复习 你经历的失败  20210703  并发编程 - AQS，信号量，CountDownLatch，CyclicBarrier LeetCode 31题 - 40 题思路复习  20210705  并发编程 - 线程池 分布式系统学习 2PC 和 3PC 和拜占庭错误 LeetCode 41题 - 50 题思路复习  20210706  线程模型 - Reactor和Proactor 操作系统之mmap，copy-on-write 分布式操作系统之全局时钟 LeetCode 51-60 题  20210708  CAS 理论复习 AtomicReference 学习 Redis 面试题复习 LeetCode  </description>
     </item>
     
     <item>
