@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>生活 - Category - 雷排的记事本</title>
+        <link>https://feyfree.github.io/categories/%E7%94%9F%E6%B4%BB/</link>
+        <description>生活 - Category - 雷排的记事本</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 27 Jun 2022 15:33:12 &#43;0800</lastBuildDate><atom:link href="https://feyfree.github.io/categories/%E7%94%9F%E6%B4%BB/" rel="self" type="application/rss+xml" /><item>
+    <title>20220703 记事</title>
+    <link>https://feyfree.github.io/posts/20220703-%E8%AE%B0%E4%BA%8B/</link>
+    <pubDate>Mon, 27 Jun 2022 15:33:12 &#43;0800</pubDate>
+    <author>雷排</author>
+    <guid>https://feyfree.github.io/posts/20220703-%E8%AE%B0%E4%BA%8B/</guid>
+    <description><![CDATA[日记 20220627 今天把《薛兆丰的北大经济学课》的科斯定律看了一下, 了解了 伤害是双方的 理解科斯定律, 从 123 的角度去思考: 存在资源争抢, 从资产所有者是同一个]]></description>
+</item>
+</channel>
+</rss>
