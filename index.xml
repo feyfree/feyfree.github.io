@@ -3,9 +3,17 @@
         <title>雷排的记事本</title>
         <link>https://feyfree.github.io/</link>
         <description>雷排的记事本</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 11 Jul 2022 22:08:23 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 18 Jul 2022 13:52:07 &#43;0800</lastBuildDate>
             <atom:link href="https://feyfree.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>20220724</title>
+    <link>https://feyfree.github.io/posts/20220724/</link>
+    <pubDate>Mon, 18 Jul 2022 13:52:07 &#43;0800</pubDate>
+    <author>雷排</author>
+    <guid>https://feyfree.github.io/posts/20220724/</guid>
+    <description><![CDATA[日记 20220718 需求第三定律 它的含义是, 每当消费者必须支付一笔附加费的时候, 高品质的商品就相对低品质的产品变得容易了, 这笔附加费越高, 高品质产品就变得]]></description>
+</item>
+<item>
     <title>20220717</title>
     <link>https://feyfree.github.io/posts/20220717/</link>
     <pubDate>Mon, 11 Jul 2022 22:08:23 &#43;0800</pubDate>
@@ -24,7 +32,7 @@
 <item>
     <title>20220703</title>
     <link>https://feyfree.github.io/posts/20220703/</link>
-    <pubDate>Mon, 27 Jun 2022 15:33:12 &#43;0800</pubDate>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
     <author>雷排</author>
     <guid>https://feyfree.github.io/posts/20220703/</guid>
     <description><![CDATA[日记 20220627 今天把《薛兆丰的北大经济学课》的科斯定律看了一下, 了解了 伤害是双方的 理解科斯定律, 从 123 的角度去思考: 存在资源争抢, 从资产所有者是同一个]]></description>
